@@ -3,6 +3,7 @@ package com.truetileanimationmovement;
 import java.lang.reflect.Array;
 
 import com.truetileanimationmovement.movement.Animations;
+import com.truetileanimationmovement.movement.SpecialAnimationPreset;
 
 public class AnimationRequestMoveset
 {
@@ -142,8 +143,12 @@ public class AnimationRequestMoveset
                 .build();
     }
 
-    public void ConstructFromSpecialAnimationSet(IdleAnimationSet AnimSet, String SpecialAnimationKey, TrueTileMovementConfig config) {
-        if (SpecialAnimationKey.equals("SpecialMoves")) {
+    public void ConstructFromSpecialAnimationSet(
+            final IdleAnimationSet AnimSet,
+            final SpecialAnimationPreset preset,
+            final TrueTileMovementConfig config)
+    {
+        if (preset == SpecialAnimationPreset.SPECIAL_MOVES) {
             for (int i = 0; i < 5; ++i) {
                 for (int j = 0; j < 5; ++j) {
                     movesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
@@ -224,7 +229,8 @@ public class AnimationRequestMoveset
             // NORTHWEST_2;
             Animations.applyHugeJumpLand(NORTHWEST_2);
         }
-        else if (SpecialAnimationKey.equals("WooxWalk"))
+        else if (preset == SpecialAnimationPreset.WOOX_WALK ||
+                preset == SpecialAnimationPreset.TICK_PERFECT_MOVEMENT)
         {
             for (int i = 0; i < 5; ++i)
             {
@@ -245,29 +251,6 @@ public class AnimationRequestMoveset
                 }
             }
             Initialize();
-        }
-        else if (SpecialAnimationKey.equals("TickPerfectMovement"))
-        {
-            for (int i = 0; i < 5; ++i)
-            {
-                for (int j = 0; j < 5; ++j)
-                {
-                    movesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
-
-                    // 2 Tiles
-                    if (i == 0 || j == 0 || i == 4 || j == 4)
-                    {
-                        Animations.applyBigJump(movesetArray[i][j]);
-                    }
-                    // 1 Tile
-                    else if (i == 1 || j == 1 || i == 3 || j == 3)
-                    {
-                        Animations.applyLittleJump(movesetArray[i][j]);
-                    }
-                }
-            }
-            Initialize();
-
         }
     }
 

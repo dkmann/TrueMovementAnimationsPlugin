@@ -1,5 +1,6 @@
 package com.truetileanimationmovement;
 
+import com.truetileanimationmovement.movement.SpecialAnimationPreset;
 import net.runelite.api.*;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
@@ -886,7 +887,7 @@ public class CustomMovementHandler
             {
                 // Handle woox walking
                 CurrentAnimationRequest = AnimationRequestMovesetCache
-                        .getMovesetFromUniqueKey(OldAnimationSet, "WooxWalk", config)
+                        .getMovesetFromUniqueKey(OldAnimationSet, SpecialAnimationPreset.WOOX_WALK, config)
                         .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                         .copy();
 
@@ -905,7 +906,7 @@ public class CustomMovementHandler
             {
                 // Handle tick perfect moving
                 CurrentAnimationRequest = AnimationRequestMovesetCache
-                        .getMovesetFromUniqueKey(OldAnimationSet, "TickPerfectMovement", config)
+                        .getMovesetFromUniqueKey(OldAnimationSet, SpecialAnimationPreset.TICK_PERFECT_MOVEMENT, config)
                         .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                         .copy();
             }
@@ -916,7 +917,7 @@ public class CustomMovementHandler
                 {
                     // Handle normal walking
                     CurrentAnimationRequest = AnimationRequestMovesetCache
-                            .getMovesetFromUniqueKey(OldAnimationSet, "SpecialMoves", config)
+                            .getMovesetFromUniqueKey(OldAnimationSet, SpecialAnimationPreset.SPECIAL_MOVES, config)
                             .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                             .copy();
                 }
