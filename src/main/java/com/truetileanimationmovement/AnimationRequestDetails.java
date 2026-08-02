@@ -1,5 +1,6 @@
 package com.truetileanimationmovement;
 
+import com.truetileanimationmovement.core.Copyable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,7 +8,8 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class AnimationRequestDetails
+public final class AnimationRequestDetails
+        implements Copyable<AnimationRequestDetails>
 {
     @Builder.Default
     private double movementSpeedMultiplier = 1;
@@ -50,9 +52,9 @@ public class AnimationRequestDetails
         allowAnimationLoop = inDetails.allowAnimationLoop;
     }
 
-    public static AnimationRequestDetails copyOf(
-            final AnimationRequestDetails inDetails)
+    @Override
+    public AnimationRequestDetails copy()
     {
-        return new AnimationRequestDetails(inDetails);
+        return new AnimationRequestDetails(this);
     }
 }

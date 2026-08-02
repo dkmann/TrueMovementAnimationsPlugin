@@ -830,7 +830,10 @@ public class CustomMovementHandler
                     if (CurrentTime - overlay.LastTimeTeleport < 6e+8) // Blend with the first tick
                     {
                         // Handle normal walking
-                        CurrentAnimationRequest = AnimationRequestDetails.copyOf(AnimationRequestMovesetCache.getMovesetFromAnimationSet(OldAnimationSet, config).MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]);
+                        CurrentAnimationRequest = AnimationRequestMovesetCache
+                                .getMovesetFromAnimationSet(OldAnimationSet, config)
+                                .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                                .copy();
                         CurrentAnimationRequest.setShouldTeleportToLocation(false);
                     }
                     else
@@ -864,7 +867,10 @@ public class CustomMovementHandler
                         int TempRotatedDirectionX = Math.max(-2, Math.min(2, Math.toIntExact(Math.round((DirectionX * cos - DirectionY * sin) / 128.0))));
                         int TempRotatedDirectionY = Math.max(-2, Math.min(2, Math.toIntExact(Math.round((DirectionX * sin + DirectionY * cos) / 128.0))));
 
-                        CurrentAnimationRequest = AnimationRequestDetails.copyOf(AnimationRequestMovesetCache.getMovesetFromAnimationSet(OldAnimationSet, config).MovesetArray[2 + TempRotatedDirectionX][2 + TempRotatedDirectionY]);
+                        CurrentAnimationRequest = AnimationRequestMovesetCache
+                                .getMovesetFromAnimationSet(OldAnimationSet, config)
+                                .MovesetArray[2 + TempRotatedDirectionX][2 + TempRotatedDirectionY]
+                                .copy();
                     }
                     bShouldUseTrueLocationOrientation = true;
                     CurrentAnimationRequest.setShouldTeleportToLocation(true);
@@ -879,7 +885,10 @@ public class CustomMovementHandler
             else if (bCurrentlyWooxWalking && config.AllowWooxWalkDetection() && bIsDefaultHumanAnimationSet)
             {
                 // Handle woox walking
-                CurrentAnimationRequest = AnimationRequestDetails.copyOf(AnimationRequestMovesetCache.getMovesetFromUniqueKey(OldAnimationSet,"WooxWalk", config).MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]);
+                CurrentAnimationRequest = AnimationRequestMovesetCache
+                        .getMovesetFromUniqueKey(OldAnimationSet, "WooxWalk", config)
+                        .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                        .copy();
 
                 // No turning if no target
                 if (currentTarget == null)
@@ -895,7 +904,10 @@ public class CustomMovementHandler
             else if ((config.AlwaysHoppingMode() || FramesSinceIdle > config.TickPerfectMovesUntilJumping()) && bIsDefaultHumanAnimationSet)
             {
                 // Handle tick perfect moving
-                CurrentAnimationRequest = AnimationRequestDetails.copyOf(AnimationRequestMovesetCache.getMovesetFromUniqueKey(OldAnimationSet,"TickPerfectMovement", config).MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]);
+                CurrentAnimationRequest = AnimationRequestMovesetCache
+                        .getMovesetFromUniqueKey(OldAnimationSet, "TickPerfectMovement", config)
+                        .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                        .copy();
             }
             else
             {
@@ -903,12 +915,18 @@ public class CustomMovementHandler
                 if (bSpecialMoveAnimation && bIsDefaultHumanAnimationSet)
                 {
                     // Handle normal walking
-                    CurrentAnimationRequest = AnimationRequestDetails.copyOf(AnimationRequestMovesetCache.getMovesetFromUniqueKey(OldAnimationSet,"SpecialMoves", config).MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]);
+                    CurrentAnimationRequest = AnimationRequestMovesetCache
+                            .getMovesetFromUniqueKey(OldAnimationSet, "SpecialMoves", config)
+                            .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                            .copy();
                 }
                 else
                 {
                     // Handle normal walking
-                    CurrentAnimationRequest = AnimationRequestDetails.copyOf(AnimationRequestMovesetCache.getMovesetFromAnimationSet(OldAnimationSet, config).MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]);
+                    CurrentAnimationRequest = AnimationRequestMovesetCache
+                            .getMovesetFromAnimationSet(OldAnimationSet, config)
+                            .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                            .copy();
                 }
             }
         }
