@@ -959,7 +959,7 @@ public class CustomMovementHandler
             else
             {
                 // 2,387->Fist pump
-                CurrentAnimationRequest.setAnimationToPlay(2387); // Fist pump
+                CurrentAnimationRequest.setAnimationToPlay(AnimationID.TBW_CLEANUP_PLAYER_HACK_SUCCESS); // Fist pump. 2387
             }
 
             CurrentAnimationRequest.setUseLinearTween(true);
