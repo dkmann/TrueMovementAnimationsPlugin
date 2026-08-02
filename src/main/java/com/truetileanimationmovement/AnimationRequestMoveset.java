@@ -295,7 +295,7 @@ public class AnimationRequestMoveset
             BACK_1.setStartingFrame(0);
             BACK_1.setAllowAnimationLoop(false);
 
-            CENTER.setAnimationToPlay(AnimSet.IdleRotateRight); // Center
+            CENTER.setAnimationToPlay(AnimSet.getIdleRotateRight()); // Center
 
             FORWARD_1.setAnimationToPlay(AnimationID.HUMAN_DRAGON_SWORD_SPEC); // Jab forward. 7515
             FORWARD_1.setMovementSpeedMultiplier(2.0);
@@ -474,34 +474,34 @@ public class AnimationRequestMoveset
         }
         Initialize();
 
-        SOUTHEAST_2.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHEAST_2.setAnimationSpeed(2); // Backwards 2, side step 2
-        SOUTHWESTWEST.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // South, side step 2
-        WEST_2.setPoseAnimationToPlay(AnimSet.WalkRotateLeft); // Side step 2
-        NORTHWESTWEST.setPoseAnimationToPlay(AnimSet.WalkRotateLeft); // North, Side step 2
-        NORTHEAST_2.setPoseAnimationToPlay(AnimSet.RunAnimation); // North-west 2
+        SOUTHEAST_2.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); SOUTHEAST_2.setAnimationSpeed(2); // Backwards 2, side step 2
+        SOUTHWESTWEST.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // South, side step 2
+        WEST_2.setPoseAnimationToPlay(AnimSet.getWalkRotateLeft()); // Side step 2
+        NORTHWESTWEST.setPoseAnimationToPlay(AnimSet.getWalkRotateLeft()); // North, Side step 2
+        NORTHEAST_2.setPoseAnimationToPlay(AnimSet.getRunAnimation()); // North-west 2
 
-        SOUTHSOUTHEAST.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHSOUTHEAST.setAnimationSpeed(2); // Backwards 2, side step 1
-        SOUTHWEST_1.setPoseAnimationToPlay(AnimSet.WalkRotate180); // South-west
-        WEST_1.setPoseAnimationToPlay(AnimSet.WalkRotateLeft); // Side step 1
-        NORTHWEST_1.setPoseAnimationToPlay(AnimSet.WalkAnimation); // North-west
-        NORTHNORTHEAST.setPoseAnimationToPlay(AnimSet.RunAnimation); // West, forward 2
+        SOUTHSOUTHEAST.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); SOUTHSOUTHEAST.setAnimationSpeed(2); // Backwards 2, side step 1
+        SOUTHWEST_1.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); // South-west
+        WEST_1.setPoseAnimationToPlay(AnimSet.getWalkRotateLeft()); // Side step 1
+        NORTHWEST_1.setPoseAnimationToPlay(AnimSet.getWalkAnimation()); // North-west
+        NORTHNORTHEAST.setPoseAnimationToPlay(AnimSet.getRunAnimation()); // West, forward 2
 
-        BACK_2.setPoseAnimationToPlay(AnimSet.WalkRotate180); BACK_2.setAnimationSpeed(2); // Backwards 2
-        BACK_1.setPoseAnimationToPlay(AnimSet.WalkRotate180); // Backwards
-        CENTER.setPoseAnimationToPlay(AnimSet.IdleRotateRight); // Center
-        FORWARD_1.setPoseAnimationToPlay(AnimSet.WalkAnimation); // Forward
-        FORWARD_2.setPoseAnimationToPlay(AnimSet.RunAnimation); // 2 Forward
+        BACK_2.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); BACK_2.setAnimationSpeed(2); // Backwards 2
+        BACK_1.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); // Backwards
+        CENTER.setPoseAnimationToPlay(AnimSet.getIdleRotateRight()); // Center
+        FORWARD_1.setPoseAnimationToPlay(AnimSet.getWalkAnimation()); // Forward
+        FORWARD_2.setPoseAnimationToPlay(AnimSet.getRunAnimation()); // 2 Forward
 
-        SOUTHSOUTHWEST.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHSOUTHWEST.setAnimationSpeed(2); // Backwards 2, side step 1
-        SOUTHEAST_1.setPoseAnimationToPlay(AnimSet.WalkRotate180); // South-east
-        EAST_1.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // Side step 1
-        NORTHEAST_1.setPoseAnimationToPlay(AnimSet.WalkAnimation); // North-east
-        NORTHNORTHWEST.setPoseAnimationToPlay(AnimSet.RunAnimation); // East, forward 2
+        SOUTHSOUTHWEST.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); SOUTHSOUTHWEST.setAnimationSpeed(2); // Backwards 2, side step 1
+        SOUTHEAST_1.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); // South-east
+        EAST_1.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // Side step 1
+        NORTHEAST_1.setPoseAnimationToPlay(AnimSet.getWalkAnimation()); // North-east
+        NORTHNORTHWEST.setPoseAnimationToPlay(AnimSet.getRunAnimation()); // East, forward 2
 
-        SOUTHWEST_2.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHWEST_2.setAnimationSpeed(2); // Backwards 2, side step 2
-        SOUTHEASTEAST.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // South, side step 2
-        EAST_2.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // Side step 2
-        NORTHEASTEAST.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // North, Side step 2
-        NORTHWEST_2.setPoseAnimationToPlay(AnimSet.RunAnimation); // North-east 2
+        SOUTHWEST_2.setPoseAnimationToPlay(AnimSet.getWalkRotate180()); SOUTHWEST_2.setAnimationSpeed(2); // Backwards 2, side step 2
+        SOUTHEASTEAST.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // South, side step 2
+        EAST_2.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // Side step 2
+        NORTHEASTEAST.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // North, Side step 2
+        NORTHWEST_2.setPoseAnimationToPlay(AnimSet.getRunAnimation()); // North-east 2
     }
 }

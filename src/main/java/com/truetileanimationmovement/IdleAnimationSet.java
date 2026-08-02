@@ -1,32 +1,35 @@
 package com.truetileanimationmovement;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class IdleAnimationSet
 {
-    public int IdleRotateLeft = 0;
-    public int IdleRotateRight = 0;
-    public int WalkAnimation = 0;
-    public int WalkRotateLeft = 0;
-    public int WalkRotateRight = 0;
-    public int WalkRotate180 = 0;
-    public int IdlePoseAnimation = 0;
-    public int RunAnimation = 0;
+    private int idleRotateLeft = 0;
+    private int idleRotateRight = 0;
+    private int walkAnimation = 0;
+    private int walkRotateLeft = 0;
+    private int walkRotateRight = 0;
+    private int walkRotate180 = 0;
+    private int idlePoseAnimation = 0;
+    private int runAnimation = 0;
 
-    private String UniqueLabel;
+    @Setter(AccessLevel.NONE)
+    private String uniqueLabel;
 
-    public void CacheUniqueLabel()
+    public void cacheUniqueLabel()
     {
-        UniqueLabel = String.valueOf(IdleRotateLeft) +
-                String.valueOf(IdleRotateRight) +
-                String.valueOf(WalkAnimation) +
-                String.valueOf(WalkRotateLeft) +
-                String.valueOf(WalkRotateRight) +
-                String.valueOf(WalkRotate180) +
-                String.valueOf(IdlePoseAnimation) +
-                String.valueOf(RunAnimation);
+        uniqueLabel = String.valueOf(idleRotateLeft) +
+                String.valueOf(idleRotateRight) +
+                String.valueOf(walkAnimation) +
+                String.valueOf(walkRotateLeft) +
+                String.valueOf(walkRotateRight) +
+                String.valueOf(walkRotate180) +
+                String.valueOf(idlePoseAnimation) +
+                String.valueOf(runAnimation);
     }
 
-    public String GetUniqueLabel()
-    {
-        return UniqueLabel;
-    }
 }

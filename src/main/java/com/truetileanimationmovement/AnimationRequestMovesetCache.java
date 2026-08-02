@@ -35,7 +35,7 @@ public class AnimationRequestMovesetCache
     {
         // Have the label encode a unique String for all config options that can mess with it
         final String uniqueLabel =
-                animSet.GetUniqueLabel() + config.OrientationRotationSpeed();
+                animSet.getUniqueLabel() + config.OrientationRotationSpeed();
         return NAME_TO_MOVESET_REQUEST.computeIfAbsent(uniqueLabel, key ->
         {
             final AnimationRequestMoveset newMoveset =
