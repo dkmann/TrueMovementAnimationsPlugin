@@ -155,40 +155,37 @@ public class AnimationRequestMoveset
     }
     static public AnimationRequestDetails GetDefaultSpecialMoveAnimationRequest()
     {
-        AnimationRequestDetails NewRequest = new AnimationRequestDetails();
-
-        NewRequest.setResetAnimationOnNewTile(true);
-        NewRequest.setAnimationToPlay(-1);
-        NewRequest.setPoseAnimationToPlay(-1);
-        NewRequest.setStartingFrame(0);
-        NewRequest.setEndingFrame(100000);
-        NewRequest.setAnimationSpeed(1);
-        NewRequest.setMovementSpeedMultiplier(0);
-        NewRequest.setUseLinearTween(false);
-        NewRequest.setShouldTeleportToLocation(false);
-        NewRequest.setAtDestinationLocation(false);
-        NewRequest.setOrientationSpeed(60);
-        NewRequest.setAllowAnimationLoop(false);
-
-        return NewRequest;
+        return AnimationRequestDetails.builder()
+                .resetAnimationOnNewTile(true)
+                .animationToPlay(-1)
+                .poseAnimationToPlay(-1)
+                .startingFrame(0)
+                .endingFrame(100000)
+                .animationSpeed(1)
+                .movementSpeedMultiplier(0)
+                .useLinearTween(false)
+                .shouldTeleportToLocation(false)
+                .atDestinationLocation(false)
+                .orientationSpeed(60)
+                .allowAnimationLoop(false)
+                .build();
     }
 
     static public AnimationRequestDetails GetDefaultIdleMoveAnimationRequest( TrueTileMovementConfig config)
     {
-        AnimationRequestDetails NewRequest = new AnimationRequestDetails();
-
-        NewRequest.setResetAnimationOnNewTile(false);
-        NewRequest.setAnimationToPlay(-1);
-        NewRequest.setPoseAnimationToPlay(-1);
-        NewRequest.setStartingFrame(0);
-        NewRequest.setEndingFrame(5000);
-        NewRequest.setAnimationSpeed(1);
-        NewRequest.setMovementSpeedMultiplier(1.0);
-        NewRequest.setUseLinearTween(true);
-        NewRequest.setShouldTeleportToLocation(false);
-        NewRequest.setAtDestinationLocation(false);
-        NewRequest.setOrientationSpeed(config.OrientationRotationSpeed());
-        return NewRequest;
+        return AnimationRequestDetails.builder()
+                .resetAnimationOnNewTile(false)
+                .animationToPlay(-1)
+                .poseAnimationToPlay(-1)
+                .startingFrame(0)
+                .endingFrame(5000)
+                .animationSpeed(1)
+                .movementSpeedMultiplier(1.0)
+                .useLinearTween(true)
+                .shouldTeleportToLocation(false)
+                .atDestinationLocation(false)
+                .orientationSpeed(config.OrientationRotationSpeed())
+                .build();
     }
 
     public void ConstructFromSpecialAnimationSet(IdleAnimationSet AnimSet, String SpecialAnimationKey, TrueTileMovementConfig config) {

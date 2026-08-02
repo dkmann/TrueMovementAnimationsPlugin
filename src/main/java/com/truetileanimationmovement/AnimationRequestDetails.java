@@ -1,23 +1,37 @@
 package com.truetileanimationmovement;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class AnimationRequestDetails
 {
+    @Builder.Default
     private double movementSpeedMultiplier = 1;
+    @Builder.Default
     private int animationToPlay = -1;
+    @Builder.Default
     private int poseAnimationToPlay = -1;
+    @Builder.Default
     private int startingFrame = 0;
+    @Builder.Default
     private int endingFrame = 5000;
+    @Builder.Default
     private int animationSpeed = 1;
+    @Builder.Default
     private int orientationSpeed = 30;
+    @Builder.Default
     private boolean resetAnimationOnNewTile = false;
+    @Builder.Default
     private boolean useLinearTween = false;
+    @Builder.Default
     private boolean shouldTeleportToLocation = false;
+    @Builder.Default
     private boolean atDestinationLocation = false;
+    @Builder.Default
     private boolean allowAnimationLoop = true;
 
     private AnimationRequestDetails(final AnimationRequestDetails inDetails)
