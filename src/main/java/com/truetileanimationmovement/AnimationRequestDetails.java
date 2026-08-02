@@ -1,19 +1,24 @@
 package com.truetileanimationmovement;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class AnimationRequestDetails
 {
-    public double MovementSpeedMultiplier = 1;
-    public int AnimationToPlay = -1;
-    public int PoseAnimationToPlay = -1;
-    public int StartingFrame = 0;
-    public int EndingFrame = 5000;
-    public int AnimationSpeed = 1;
-    public int OrientationSpeed = 30;
-    public boolean bResetAnimationOnNewTile = false;
-    public boolean bUseLinearTween = false;
-    public boolean bShouldTeleportToLocation = false;
-    public boolean bAtDestinationLocation = false;
-    public boolean bAllowAnimationLoop = true;
+    private double MovementSpeedMultiplier = 1;
+    private int AnimationToPlay = -1;
+    private int PoseAnimationToPlay = -1;
+    private int StartingFrame = 0;
+    private int EndingFrame = 5000;
+    private int AnimationSpeed = 1;
+    private int OrientationSpeed = 30;
+    private boolean ResetAnimationOnNewTile = false;
+    private boolean UseLinearTween = false;
+    private boolean ShouldTeleportToLocation = false;
+    private boolean AtDestinationLocation = false;
+    private boolean AllowAnimationLoop = true;
 
     static AnimationRequestDetails NewObject(AnimationRequestDetails InDetails)
     {
@@ -26,11 +31,11 @@ public class AnimationRequestDetails
         newObject.EndingFrame = InDetails.EndingFrame;
         newObject.AnimationSpeed = InDetails.AnimationSpeed;
         newObject.OrientationSpeed = InDetails.OrientationSpeed;
-        newObject.bResetAnimationOnNewTile = InDetails.bResetAnimationOnNewTile;
-        newObject.bUseLinearTween = InDetails.bUseLinearTween;
-        newObject.bShouldTeleportToLocation = InDetails.bShouldTeleportToLocation;
-        newObject.bAtDestinationLocation = InDetails.bAtDestinationLocation;
-        newObject.bAllowAnimationLoop = InDetails.bAllowAnimationLoop;
+        newObject.ResetAnimationOnNewTile = InDetails.ResetAnimationOnNewTile;
+        newObject.UseLinearTween = InDetails.UseLinearTween;
+        newObject.ShouldTeleportToLocation = InDetails.ShouldTeleportToLocation;
+        newObject.AtDestinationLocation = InDetails.AtDestinationLocation;
+        newObject.AllowAnimationLoop = InDetails.AllowAnimationLoop;
 
         return newObject;
     }

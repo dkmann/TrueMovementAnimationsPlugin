@@ -204,9 +204,9 @@ public class CustomMovementHandler
             {
                 if (CurrentAnimationRequest != null)
                 {
-                    if (CurrentAnimationRequest.bAllowAnimationLoop)
+                    if (CurrentAnimationRequest.isAllowAnimationLoop())
                     {
-                        InController.setFrame(CurrentAnimationRequest.StartingFrame);
+                        InController.setFrame(CurrentAnimationRequest.getStartingFrame());
                     }
                 }
                 else
@@ -670,7 +670,7 @@ public class CustomMovementHandler
                 ++FramesSinceIdle;
 
                 // Interrupt the teleport
-                if (CurrentAnimationRequest.bShouldTeleportToLocation && FramesSinceIdle > 1)
+                if (CurrentAnimationRequest.isShouldTeleportToLocation() && FramesSinceIdle > 1)
                 {
                     overlay.bTeleportInterrupted = true;
                 }
@@ -831,12 +831,12 @@ public class CustomMovementHandler
                     {
                         // Handle normal walking
                         CurrentAnimationRequest = AnimationRequestDetails.NewObject(AnimationRequestMovesetCache.getMovesetFromAnimationSet(OldAnimationSet, config).MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]);
-                        CurrentAnimationRequest.bShouldTeleportToLocation = false;
+                        CurrentAnimationRequest.setShouldTeleportToLocation(false);
                     }
                     else
                     {
-                        CurrentAnimationRequest.bShouldTeleportToLocation = true;
-                        CurrentAnimationRequest.AnimationToPlay = AnimationID.HUMAN_CASTTELEPORT_REVERSE; // Teleport in. 715
+                        CurrentAnimationRequest.setShouldTeleportToLocation(true);
+                        CurrentAnimationRequest.setAnimationToPlay(AnimationID.HUMAN_CASTTELEPORT_REVERSE); // Teleport in. 715
 
                         ChangeLastLerpPointForRotation();
                     }
@@ -857,7 +857,7 @@ public class CustomMovementHandler
                     if (Owner.getLocalLocation().getX() == CurrentTrueTilePosition.getX() &&
                             Owner.getLocalLocation().getY() == CurrentTrueTilePosition.getY() )
                     {
-                        CurrentAnimationRequest.PoseAnimationToPlay = OldAnimationSet.IdlePoseAnimation;
+                        CurrentAnimationRequest.setPoseAnimationToPlay(OldAnimationSet.IdlePoseAnimation);
                     }
                     else
                     {
@@ -867,14 +867,14 @@ public class CustomMovementHandler
                         CurrentAnimationRequest = AnimationRequestDetails.NewObject(AnimationRequestMovesetCache.getMovesetFromAnimationSet(OldAnimationSet, config).MovesetArray[2 + TempRotatedDirectionX][2 + TempRotatedDirectionY]);
                     }
                     bShouldUseTrueLocationOrientation = true;
-                    CurrentAnimationRequest.bShouldTeleportToLocation = true;
+                    CurrentAnimationRequest.setShouldTeleportToLocation(true);
 
                     ChangeLastLerpPointForRotation();
                 }
-                CurrentAnimationRequest.bUseLinearTween = true;
-                CurrentAnimationRequest.MovementSpeedMultiplier = 1.0;
-                CurrentAnimationRequest.StartingFrame = 0;
-                CurrentAnimationRequest.AnimationSpeed = 1;
+                CurrentAnimationRequest.setUseLinearTween(true);
+                CurrentAnimationRequest.setMovementSpeedMultiplier(1.0);
+                CurrentAnimationRequest.setStartingFrame(0);
+                CurrentAnimationRequest.setAnimationSpeed(1);
             }
             else if (bCurrentlyWooxWalking && config.AllowWooxWalkDetection() && bIsDefaultHumanAnimationSet)
             {
@@ -884,12 +884,12 @@ public class CustomMovementHandler
                 // No turning if no target
                 if (currentTarget == null)
                 {
-                    CurrentAnimationRequest.OrientationSpeed = 0;
+                    CurrentAnimationRequest.setOrientationSpeed(0);
                 }
                 else
                 {
                     // Slower turn when woox walking
-                    CurrentAnimationRequest.OrientationSpeed /= 2;
+                    CurrentAnimationRequest.setOrientationSpeed(CurrentAnimationRequest.getOrientationSpeed() / 2);
                 }
             }
             else if ((config.AlwaysHoppingMode() || FramesSinceIdle > config.TickPerfectMovesUntilJumping()) && bIsDefaultHumanAnimationSet)
@@ -920,34 +920,34 @@ public class CustomMovementHandler
             if (LastNPCCombatLevel > 300)
             {
                 // 2,387->Fist pump
-                CurrentAnimationRequest.AnimationToPlay = AnimationID.EMOTE_DANCE_SCOTTISH; // Jig. 2106
+                CurrentAnimationRequest.setAnimationToPlay(AnimationID.EMOTE_DANCE_SCOTTISH); // Jig. 2106
             }
             else if (LastNPCCombatLevel > 200)
             {
                 // 2,387->Fist pump
-                CurrentAnimationRequest.AnimationToPlay = AnimationID.EMOTE_DANCE; // Dance. 866
+                CurrentAnimationRequest.setAnimationToPlay(AnimationID.EMOTE_DANCE); // Dance. 866
             }
             else if (LastNPCCombatLevel > 150)
             {
                 // 2,387->Fist pump
-                CurrentAnimationRequest.AnimationToPlay = AnimationID.EMOTE_FLEX; // Flex. 8917
+                CurrentAnimationRequest.setAnimationToPlay(AnimationID.EMOTE_FLEX); // Flex. 8917
             }
             else if (LastNPCCombatLevel > 100)
             {
                 // 2,387->Fist pump
-                CurrentAnimationRequest.AnimationToPlay = AnimationID.EMOTE_CHEER; // Cheer. 862
+                CurrentAnimationRequest.setAnimationToPlay(AnimationID.EMOTE_CHEER); // Cheer. 862
             }
             // > 50
             else
             {
                 // 2,387->Fist pump
-                CurrentAnimationRequest.AnimationToPlay = 2387; // Fist pump
+                CurrentAnimationRequest.setAnimationToPlay(2387); // Fist pump
             }
 
-            CurrentAnimationRequest.bUseLinearTween = true;
-            CurrentAnimationRequest.MovementSpeedMultiplier = 1;
-            CurrentAnimationRequest.AnimationSpeed = 1;
-            CurrentAnimationRequest.StartingFrame = 0;
+            CurrentAnimationRequest.setUseLinearTween(true);
+            CurrentAnimationRequest.setMovementSpeedMultiplier(1);
+            CurrentAnimationRequest.setAnimationSpeed(1);
+            CurrentAnimationRequest.setStartingFrame(0);
             ChangeLastLerpPointForRotation();
             bWooxWalkBroken = true;
             FramesSinceIdle = 0;
@@ -958,23 +958,23 @@ public class CustomMovementHandler
             bMovingThisAction = false;
 
             CurrentAnimationRequest = AnimationRequestMoveset.GetDefaultIdleMoveAnimationRequest(config);
-            CurrentAnimationRequest.bUseLinearTween = true;
-            CurrentAnimationRequest.MovementSpeedMultiplier = 1.0;
-            CurrentAnimationRequest.AnimationSpeed = 1;
-            CurrentAnimationRequest.StartingFrame = 0;
+            CurrentAnimationRequest.setUseLinearTween(true);
+            CurrentAnimationRequest.setMovementSpeedMultiplier(1.0);
+            CurrentAnimationRequest.setAnimationSpeed(1);
+            CurrentAnimationRequest.setStartingFrame(0);
             ChangeLastLerpPointForRotation();
             int ShortestAngle = ShortestAngleDifference(CurrentOrientation, TargetOrientation);
             if (ShortestAngle >= 10)
             {;
-                CurrentAnimationRequest.PoseAnimationToPlay = OldAnimationSet.IdleRotateRight;
+                CurrentAnimationRequest.setPoseAnimationToPlay(OldAnimationSet.IdleRotateRight);
             }
             else if (ShortestAngle <= -10)
             {
-                CurrentAnimationRequest.PoseAnimationToPlay = OldAnimationSet.IdleRotateLeft;
+                CurrentAnimationRequest.setPoseAnimationToPlay(OldAnimationSet.IdleRotateLeft);
             }
             else
             {;
-                CurrentAnimationRequest.PoseAnimationToPlay = OldAnimationSet.IdlePoseAnimation;
+                CurrentAnimationRequest.setPoseAnimationToPlay(OldAnimationSet.IdlePoseAnimation);
             }
 
             bWooxWalkBroken = true;
@@ -989,11 +989,11 @@ public class CustomMovementHandler
 
         if (bApplyQuickAndDirtyTeleport)
         {
-            CurrentAnimationRequest.bShouldTeleportToLocation = true;
-            CurrentAnimationRequest.OrientationSpeed = 10000;
+            CurrentAnimationRequest.setShouldTeleportToLocation(true);
+            CurrentAnimationRequest.setOrientationSpeed(10000);
         }
 
-        if (CurrentAnimationRequest.bResetAnimationOnNewTile && bNewTileMovementStarted)
+        if (CurrentAnimationRequest.isResetAnimationOnNewTile() && bNewTileMovementStarted)
         {
             bResetCurrentAnimation = true; // Reset animation
         }
@@ -1061,13 +1061,13 @@ public class CustomMovementHandler
     {
         // 600ms a tick, interpolate between true local point and last true tile position
         double TweenValue = 0;
-        double MovementSpeedMultiplier = config.MovementSpeedMultiplier() * CurrentAnimationRequest.MovementSpeedMultiplier;
+        double MovementSpeedMultiplier = config.MovementSpeedMultiplier() * CurrentAnimationRequest.getMovementSpeedMultiplier();
         MovementSpeedMultiplier = Math.max(MovementSpeedMultiplier, 1);
-        if (CurrentAnimationRequest.bShouldTeleportToLocation)
+        if (CurrentAnimationRequest.isShouldTeleportToLocation())
         {
             TweenValue = 1.0;
         }
-        else if (CurrentAnimationRequest.bUseLinearTween)
+        else if (CurrentAnimationRequest.isUseLinearTween())
         {
             TweenValue = linearTween(0L, (long) (6e+8 / MovementSpeedMultiplier), NanosecondsSinceTileChange);
         }
@@ -1318,7 +1318,7 @@ public class CustomMovementHandler
                 int ShortestAngle = ShortestAngleDifference(CurrentOrientation, TargetOrientation);
 
                 // Need to rotate to our target rotation smoothly
-                double AdjustedOrientationSpeed = CurrentAnimationRequest.OrientationSpeed * ((double) CurrentFrameDelta / 16667000);// Speed value centered at 60FPS
+                double AdjustedOrientationSpeed = CurrentAnimationRequest.getOrientationSpeed() * ((double) CurrentFrameDelta / 16667000);// Speed value centered at 60FPS
                 if (ShortestAngle > 0)
                 {
                     CurrentOrientation += (int) Math.min(ShortestAngle, AdjustedOrientationSpeed);
@@ -1347,21 +1347,21 @@ public class CustomMovementHandler
             // Custom handler
             boolean bUsedCustomAnimation = false;
             if ((UniqueAnimationExceptionList.contains(Owner.getAnimation()) && bMovingThisAction) ||
-                    CurrentAnimationRequest.AnimationToPlay != -1)
+                    CurrentAnimationRequest.getAnimationToPlay() != -1)
             {
                 bUsedCustomAnimation = true;
                 // Anim controller takes control over the pose animation or custom anim
                 Animation CustomAnim = null;
 
                 boolean bUsingPoseAnim = false;
-                if (CurrentAnimationRequest.PoseAnimationToPlay != -1)
+                if (CurrentAnimationRequest.getPoseAnimationToPlay() != -1)
                 {
                     bUsingPoseAnim = true;
-                    CustomAnim = client.loadAnimation(CurrentAnimationRequest.PoseAnimationToPlay);
+                    CustomAnim = client.loadAnimation(CurrentAnimationRequest.getPoseAnimationToPlay());
                 }
                 else
                 {
-                    CustomAnim = client.loadAnimation(CurrentAnimationRequest.AnimationToPlay);
+                    CustomAnim = client.loadAnimation(CurrentAnimationRequest.getAnimationToPlay());
                 }
 
                 if (AnimController.getAnimation() != CustomAnim || bResetCurrentAnimation)
@@ -1376,7 +1376,7 @@ public class CustomMovementHandler
                     }
                     else
                     {
-                        AnimController.setFrame(CurrentAnimationRequest.StartingFrame);
+                        AnimController.setFrame(CurrentAnimationRequest.getStartingFrame());
                     }
                     bResetCurrentAnimation = false;
                 }
@@ -1387,17 +1387,17 @@ public class CustomMovementHandler
                 if (CurrentTime - LastAnimationTickTime >= 16666666) // 16.6667ms per frame->60FPS
                 {
                     LastAnimationTickTime = CurrentTime;
-                    if (AnimController.getFrame() < CurrentAnimationRequest.StartingFrame)
+                    if (AnimController.getFrame() < CurrentAnimationRequest.getStartingFrame())
                     {
-                        AnimController.setFrame(CurrentAnimationRequest.StartingFrame);
+                        AnimController.setFrame(CurrentAnimationRequest.getStartingFrame());
                     }
-                    else if (AnimController.getFrame() >= CurrentAnimationRequest.EndingFrame)
+                    else if (AnimController.getFrame() >= CurrentAnimationRequest.getEndingFrame())
                     {
-                        AnimController.setFrame(CurrentAnimationRequest.EndingFrame);
+                        AnimController.setFrame(CurrentAnimationRequest.getEndingFrame());
                     }
                     else
                     {
-                        AnimController.tick(CurrentAnimationRequest.AnimationSpeed);
+                        AnimController.tick(CurrentAnimationRequest.getAnimationSpeed());
                     }
                 }
 
@@ -1420,17 +1420,17 @@ public class CustomMovementHandler
                     AnimController.setFrame(0);
                 }
 
-                if (CurrentAnimationRequest.PoseAnimationToPlay != -1 &&
-                        (Owner.getPoseAnimation() != CurrentAnimationRequest.PoseAnimationToPlay || bResetCurrentAnimation))
+                if (CurrentAnimationRequest.getPoseAnimationToPlay() != -1 &&
+                        (Owner.getPoseAnimation() != CurrentAnimationRequest.getPoseAnimationToPlay() || bResetCurrentAnimation))
                 {
-                    Animation CustomAnim = client.loadAnimation(CurrentAnimationRequest.PoseAnimationToPlay);
+                    Animation CustomAnim = client.loadAnimation(CurrentAnimationRequest.getPoseAnimationToPlay());
 
                     if (Owner.getPoseAnimationFrame() >= CustomAnim.getNumFrames() || bResetCurrentAnimation)
                     {
-                        Owner.setPoseAnimationFrame(CurrentAnimationRequest.StartingFrame);
+                        Owner.setPoseAnimationFrame(CurrentAnimationRequest.getStartingFrame());
                     }
 
-                    Owner.setPoseAnimation(CurrentAnimationRequest.PoseAnimationToPlay);
+                    Owner.setPoseAnimation(CurrentAnimationRequest.getPoseAnimationToPlay());
                     CurrentPoseAnimation = NO_ANIMATION;
                     bResetCurrentAnimation = false;
                 }

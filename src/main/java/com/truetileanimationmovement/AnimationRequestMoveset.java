@@ -157,18 +157,18 @@ public class AnimationRequestMoveset
     {
         AnimationRequestDetails NewRequest = new AnimationRequestDetails();
 
-        NewRequest.bResetAnimationOnNewTile = true;
-        NewRequest.AnimationToPlay = -1;
-        NewRequest.PoseAnimationToPlay = -1;
-        NewRequest.StartingFrame = 0;
-        NewRequest.EndingFrame = 100000;
-        NewRequest.AnimationSpeed = 1;
-        NewRequest.MovementSpeedMultiplier = 0;
-        NewRequest.bUseLinearTween = false;
-        NewRequest.bShouldTeleportToLocation = false;
-        NewRequest.bAtDestinationLocation = false;
-        NewRequest.OrientationSpeed = 60;
-        NewRequest.bAllowAnimationLoop = false;
+        NewRequest.setResetAnimationOnNewTile(true);
+        NewRequest.setAnimationToPlay(-1);
+        NewRequest.setPoseAnimationToPlay(-1);
+        NewRequest.setStartingFrame(0);
+        NewRequest.setEndingFrame(100000);
+        NewRequest.setAnimationSpeed(1);
+        NewRequest.setMovementSpeedMultiplier(0);
+        NewRequest.setUseLinearTween(false);
+        NewRequest.setShouldTeleportToLocation(false);
+        NewRequest.setAtDestinationLocation(false);
+        NewRequest.setOrientationSpeed(60);
+        NewRequest.setAllowAnimationLoop(false);
 
         return NewRequest;
     }
@@ -177,17 +177,17 @@ public class AnimationRequestMoveset
     {
         AnimationRequestDetails NewRequest = new AnimationRequestDetails();
 
-        NewRequest.bResetAnimationOnNewTile = false;
-        NewRequest.AnimationToPlay = -1;
-        NewRequest.PoseAnimationToPlay = -1;
-        NewRequest.StartingFrame = 0;
-        NewRequest.EndingFrame = 5000;
-        NewRequest.AnimationSpeed = 1;
-        NewRequest.MovementSpeedMultiplier = 1.0;
-        NewRequest.bUseLinearTween = true;
-        NewRequest.bShouldTeleportToLocation = false;
-        NewRequest.bAtDestinationLocation = false;
-        NewRequest.OrientationSpeed = config.OrientationRotationSpeed();
+        NewRequest.setResetAnimationOnNewTile(false);
+        NewRequest.setAnimationToPlay(-1);
+        NewRequest.setPoseAnimationToPlay(-1);
+        NewRequest.setStartingFrame(0);
+        NewRequest.setEndingFrame(5000);
+        NewRequest.setAnimationSpeed(1);
+        NewRequest.setMovementSpeedMultiplier(1.0);
+        NewRequest.setUseLinearTween(true);
+        NewRequest.setShouldTeleportToLocation(false);
+        NewRequest.setAtDestinationLocation(false);
+        NewRequest.setOrientationSpeed(config.OrientationRotationSpeed());
         return NewRequest;
     }
 
@@ -201,196 +201,196 @@ public class AnimationRequestMoveset
             Initialize();
 
             // SOUTHEAST_2;
-            SOUTHEAST_2.AnimationToPlay = AnimationID.MDAUGHTER_ABSAIL_JUMP; // lean WAY back. 1770
-            SOUTHEAST_2.bUseLinearTween = false;
-            SOUTHEAST_2.MovementSpeedMultiplier = 1.5;
-            SOUTHEAST_2.AnimationSpeed = 1;
-            SOUTHEAST_2.StartingFrame = 0;
-            SOUTHEAST_2.bAllowAnimationLoop = false;
+            SOUTHEAST_2.setAnimationToPlay(AnimationID.MDAUGHTER_ABSAIL_JUMP); // lean WAY back. 1770
+            SOUTHEAST_2.setUseLinearTween(false);
+            SOUTHEAST_2.setMovementSpeedMultiplier(1.5);
+            SOUTHEAST_2.setAnimationSpeed(1);
+            SOUTHEAST_2.setStartingFrame(0);
+            SOUTHEAST_2.setAllowAnimationLoop(false);
 
 
             // SOUTHSOUTHWEST;
-            SOUTHWESTWEST.AnimationToPlay = AnimationID.MDAUGHTER_TREE_CLIMB3; // sick jump land. 1764
-            SOUTHWESTWEST.bUseLinearTween = false;
-            SOUTHWESTWEST.MovementSpeedMultiplier = 1.5;
-            SOUTHWESTWEST.AnimationSpeed = 1;
-            SOUTHWESTWEST.StartingFrame = 0;
-            SOUTHWESTWEST.bAllowAnimationLoop = false;
+            SOUTHWESTWEST.setAnimationToPlay(AnimationID.MDAUGHTER_TREE_CLIMB3); // sick jump land. 1764
+            SOUTHWESTWEST.setUseLinearTween(false);
+            SOUTHWESTWEST.setMovementSpeedMultiplier(1.5);
+            SOUTHWESTWEST.setAnimationSpeed(1);
+            SOUTHWESTWEST.setStartingFrame(0);
+            SOUTHWESTWEST.setAllowAnimationLoop(false);
 
 
             // WEST_2;
-            WEST_2.AnimationToPlay = AnimationID.EMOTE_DANCE_SPIN; // Side step 2, spin emote. 2107
-            WEST_2.MovementSpeedMultiplier = 2;
-            WEST_2.AnimationSpeed = 1;
-            WEST_2.StartingFrame = 4;
-            WEST_2.bAllowAnimationLoop = false;
+            WEST_2.setAnimationToPlay(AnimationID.EMOTE_DANCE_SPIN); // Side step 2, spin emote. 2107
+            WEST_2.setMovementSpeedMultiplier(2);
+            WEST_2.setAnimationSpeed(1);
+            WEST_2.setStartingFrame(4);
+            WEST_2.setAllowAnimationLoop(false);
 
             // NORTHWESTWEST;
-            NORTHWESTWEST.AnimationToPlay = AnimationID.HUMAN_DHSWORD_SPIN; // another cool spin move. 409
-            NORTHWESTWEST.MovementSpeedMultiplier = 2;
-            NORTHWESTWEST.AnimationSpeed = 1;
-            NORTHWESTWEST.StartingFrame = 0;
-            NORTHWESTWEST.bAllowAnimationLoop = false;
+            NORTHWESTWEST.setAnimationToPlay(AnimationID.HUMAN_DHSWORD_SPIN); // another cool spin move. 409
+            NORTHWESTWEST.setMovementSpeedMultiplier(2);
+            NORTHWESTWEST.setAnimationSpeed(1);
+            NORTHWESTWEST.setStartingFrame(0);
+            NORTHWESTWEST.setAllowAnimationLoop(false);
 
 
             // NORTHEAST_2;
-            NORTHEAST_2.AnimationToPlay = AnimationID.DWARFROCK_CANNON_FLY_GETUP; // huge jump land. 1852
-            NORTHEAST_2.bUseLinearTween = false;
-            NORTHEAST_2.MovementSpeedMultiplier = 1.5;
-            NORTHEAST_2.AnimationSpeed = 1;
-            NORTHEAST_2.StartingFrame = 0;
-            NORTHEAST_2.bAllowAnimationLoop = false;
+            NORTHEAST_2.setAnimationToPlay(AnimationID.DWARFROCK_CANNON_FLY_GETUP); // huge jump land. 1852
+            NORTHEAST_2.setUseLinearTween(false);
+            NORTHEAST_2.setMovementSpeedMultiplier(1.5);
+            NORTHEAST_2.setAnimationSpeed(1);
+            NORTHEAST_2.setStartingFrame(0);
+            NORTHEAST_2.setAllowAnimationLoop(false);
 
 
             // SOUTHSOUTHEAST;
-            SOUTHSOUTHEAST.AnimationToPlay = AnimationID.MDAUGHTER_TREE_CLIMB3; // sick jump land. 1764
-            SOUTHSOUTHEAST.bUseLinearTween = false;
-            SOUTHSOUTHEAST.MovementSpeedMultiplier = 1.5;
-            SOUTHSOUTHEAST.AnimationSpeed = 1;
-            SOUTHSOUTHEAST.StartingFrame = 0;
-            SOUTHSOUTHEAST.bAllowAnimationLoop = false;
+            SOUTHSOUTHEAST.setAnimationToPlay(AnimationID.MDAUGHTER_TREE_CLIMB3); // sick jump land. 1764
+            SOUTHSOUTHEAST.setUseLinearTween(false);
+            SOUTHSOUTHEAST.setMovementSpeedMultiplier(1.5);
+            SOUTHSOUTHEAST.setAnimationSpeed(1);
+            SOUTHSOUTHEAST.setStartingFrame(0);
+            SOUTHSOUTHEAST.setAllowAnimationLoop(false);
 
 
             // SOUTHWEST_1;
-            SOUTHWEST_1.AnimationToPlay = AnimationID.HUMAN_ZAMORAKSPEAR_TURNONSPOT; // side step small. 1702
-            SOUTHWEST_1.bUseLinearTween = true;
-            SOUTHWEST_1.MovementSpeedMultiplier = 1.0;
-            SOUTHWEST_1.AnimationSpeed = 1;
-            SOUTHWEST_1.StartingFrame = 0;
-            SOUTHWEST_1.bAllowAnimationLoop = false;
+            SOUTHWEST_1.setAnimationToPlay(AnimationID.HUMAN_ZAMORAKSPEAR_TURNONSPOT); // side step small. 1702
+            SOUTHWEST_1.setUseLinearTween(true);
+            SOUTHWEST_1.setMovementSpeedMultiplier(1.0);
+            SOUTHWEST_1.setAnimationSpeed(1);
+            SOUTHWEST_1.setStartingFrame(0);
+            SOUTHWEST_1.setAllowAnimationLoop(false);
 
             // WEST_1;
-            WEST_1.AnimationToPlay = AnimationID.HUMAN_WALK_L; // SIDE STEP LEFT. 821
-            WEST_1.MovementSpeedMultiplier = 1.5;
-            WEST_1.AnimationSpeed = 2;
-            WEST_1.StartingFrame = 0;
-            WEST_1.bAllowAnimationLoop = false;
+            WEST_1.setAnimationToPlay(AnimationID.HUMAN_WALK_L); // SIDE STEP LEFT. 821
+            WEST_1.setMovementSpeedMultiplier(1.5);
+            WEST_1.setAnimationSpeed(2);
+            WEST_1.setStartingFrame(0);
+            WEST_1.setAllowAnimationLoop(false);
 
             // NORTHWEST_1;
-            NORTHWEST_1.AnimationToPlay = AnimationID.HUMAN_LONGJUMP; // Small hop. 807
-            NORTHWEST_1.MovementSpeedMultiplier = 3.0;
-            NORTHWEST_1.StartingFrame = 7;
-            NORTHWEST_1.AnimationSpeed = 1;
-            NORTHWEST_1.bAllowAnimationLoop = false;
+            NORTHWEST_1.setAnimationToPlay(AnimationID.HUMAN_LONGJUMP); // Small hop. 807
+            NORTHWEST_1.setMovementSpeedMultiplier(3.0);
+            NORTHWEST_1.setStartingFrame(7);
+            NORTHWEST_1.setAnimationSpeed(1);
+            NORTHWEST_1.setAllowAnimationLoop(false);
 
 
             // NORTHNORTHEAST;
-            NORTHNORTHEAST.AnimationToPlay = AnimationID.OVERLOG; // Super far jump forward. 2750
-            NORTHNORTHEAST.bUseLinearTween = false;
-            NORTHNORTHEAST.MovementSpeedMultiplier = 1.6;
-            NORTHNORTHEAST.AnimationSpeed = 2;
-            NORTHNORTHEAST.StartingFrame = 2;
-            NORTHNORTHEAST.bAllowAnimationLoop = false;
+            NORTHNORTHEAST.setAnimationToPlay(AnimationID.OVERLOG); // Super far jump forward. 2750
+            NORTHNORTHEAST.setUseLinearTween(false);
+            NORTHNORTHEAST.setMovementSpeedMultiplier(1.6);
+            NORTHNORTHEAST.setAnimationSpeed(2);
+            NORTHNORTHEAST.setStartingFrame(2);
+            NORTHNORTHEAST.setAllowAnimationLoop(false);
 
             // BACK_2;
-            BACK_2.AnimationToPlay = AnimationID.TBW_CLEANUP_PLAYER_SURPRISE_STEPBACK; // big knockback. 2390
-            BACK_2.bUseLinearTween = false;
-            BACK_2.MovementSpeedMultiplier = 2;
-            BACK_2.AnimationSpeed = 1;
-            BACK_2.StartingFrame = 0;
-            BACK_2.bAllowAnimationLoop = false;
+            BACK_2.setAnimationToPlay(AnimationID.TBW_CLEANUP_PLAYER_SURPRISE_STEPBACK); // big knockback. 2390
+            BACK_2.setUseLinearTween(false);
+            BACK_2.setMovementSpeedMultiplier(2);
+            BACK_2.setAnimationSpeed(1);
+            BACK_2.setStartingFrame(0);
+            BACK_2.setAllowAnimationLoop(false);
 
             // BACK_1;
-            BACK_1.AnimationToPlay = AnimationID.HUMAN_STUMBLE_BACK_CONTINUOUS; // knockback. 1441
-            BACK_1.bUseLinearTween = true;
-            BACK_1.MovementSpeedMultiplier = 1;
-            BACK_1.AnimationSpeed = 1;
-            BACK_1.StartingFrame = 0;
-            BACK_1.bAllowAnimationLoop = false;
+            BACK_1.setAnimationToPlay(AnimationID.HUMAN_STUMBLE_BACK_CONTINUOUS); // knockback. 1441
+            BACK_1.setUseLinearTween(true);
+            BACK_1.setMovementSpeedMultiplier(1);
+            BACK_1.setAnimationSpeed(1);
+            BACK_1.setStartingFrame(0);
+            BACK_1.setAllowAnimationLoop(false);
 
-            CENTER.AnimationToPlay = AnimSet.IdleRotateRight; // Center
+            CENTER.setAnimationToPlay(AnimSet.IdleRotateRight); // Center
 
-            FORWARD_1.AnimationToPlay = AnimationID.HUMAN_DRAGON_SWORD_SPEC; // Jab forward. 7515
-            FORWARD_1.MovementSpeedMultiplier = 2.0;
-            FORWARD_1.StartingFrame = 0;
-            FORWARD_1.AnimationSpeed = 1;
-            FORWARD_1.bAllowAnimationLoop = false;
+            FORWARD_1.setAnimationToPlay(AnimationID.HUMAN_DRAGON_SWORD_SPEC); // Jab forward. 7515
+            FORWARD_1.setMovementSpeedMultiplier(2.0);
+            FORWARD_1.setStartingFrame(0);
+            FORWARD_1.setAnimationSpeed(1);
+            FORWARD_1.setAllowAnimationLoop(false);
 
             // FORWARD_2;
-            FORWARD_2.AnimationToPlay = AnimationID.AGILITY_PYRAMID_GAP_JUMP; // Big jump forward. 3067
-            FORWARD_2.MovementSpeedMultiplier = 2;
-            FORWARD_2.AnimationSpeed = 2;
-            FORWARD_2.StartingFrame = 2;
-            FORWARD_2.EndingFrame = 7;
-            FORWARD_2.bAllowAnimationLoop = false;
+            FORWARD_2.setAnimationToPlay(AnimationID.AGILITY_PYRAMID_GAP_JUMP); // Big jump forward. 3067
+            FORWARD_2.setMovementSpeedMultiplier(2);
+            FORWARD_2.setAnimationSpeed(2);
+            FORWARD_2.setStartingFrame(2);
+            FORWARD_2.setEndingFrame(7);
+            FORWARD_2.setAllowAnimationLoop(false);
 
             // SOUTHWESTWEST;
-            SOUTHSOUTHWEST.AnimationToPlay = AnimationID.EMOTE_STARJUMP_5; // Jumping Jack. 870
-            SOUTHSOUTHWEST.bUseLinearTween = false;
-            SOUTHSOUTHWEST.MovementSpeedMultiplier = 2;
-            SOUTHSOUTHWEST.AnimationSpeed = 1;
-            SOUTHSOUTHWEST.StartingFrame = 0;
-            SOUTHSOUTHWEST.bAllowAnimationLoop = false;
+            SOUTHSOUTHWEST.setAnimationToPlay(AnimationID.EMOTE_STARJUMP_5); // Jumping Jack. 870
+            SOUTHSOUTHWEST.setUseLinearTween(false);
+            SOUTHSOUTHWEST.setMovementSpeedMultiplier(2);
+            SOUTHSOUTHWEST.setAnimationSpeed(1);
+            SOUTHSOUTHWEST.setStartingFrame(0);
+            SOUTHSOUTHWEST.setAllowAnimationLoop(false);
 
 
             // SOUTHEAST_1;
-            SOUTHEAST_1.AnimationToPlay = AnimationID.HUMAN_ZAMORAKSPEAR_TURNONSPOT; // side step small. 1702
-            SOUTHEAST_1.bUseLinearTween = true;
-            SOUTHEAST_1.MovementSpeedMultiplier = 1.0;
-            SOUTHEAST_1.AnimationSpeed = 1;
-            SOUTHEAST_1.StartingFrame = 0;
-            SOUTHEAST_1.bAllowAnimationLoop = false;
+            SOUTHEAST_1.setAnimationToPlay(AnimationID.HUMAN_ZAMORAKSPEAR_TURNONSPOT); // side step small. 1702
+            SOUTHEAST_1.setUseLinearTween(true);
+            SOUTHEAST_1.setMovementSpeedMultiplier(1.0);
+            SOUTHEAST_1.setAnimationSpeed(1);
+            SOUTHEAST_1.setStartingFrame(0);
+            SOUTHEAST_1.setAllowAnimationLoop(false);
 
 
             // EAST_2;
-            EAST_1.AnimationToPlay = AnimationID.HUMAN_WALK_R; // SIDE STEP RIGHT. 822
-            EAST_1.MovementSpeedMultiplier = 1.5;
-            EAST_1.AnimationSpeed = 2;
-            EAST_1.bAllowAnimationLoop = false;
+            EAST_1.setAnimationToPlay(AnimationID.HUMAN_WALK_R); // SIDE STEP RIGHT. 822
+            EAST_1.setMovementSpeedMultiplier(1.5);
+            EAST_1.setAnimationSpeed(2);
+            EAST_1.setAllowAnimationLoop(false);
 
             // NORTHEAST_1;
-            NORTHEAST_1.AnimationToPlay = AnimationID.HUMAN_LONGJUMP; // North-east. 807
-            NORTHEAST_1.MovementSpeedMultiplier = 3.0;
-            NORTHEAST_1.StartingFrame = 7;
-            NORTHEAST_1.AnimationSpeed = 1;
-            NORTHEAST_1.bAllowAnimationLoop = false;
+            NORTHEAST_1.setAnimationToPlay(AnimationID.HUMAN_LONGJUMP); // North-east. 807
+            NORTHEAST_1.setMovementSpeedMultiplier(3.0);
+            NORTHEAST_1.setStartingFrame(7);
+            NORTHEAST_1.setAnimationSpeed(1);
+            NORTHEAST_1.setAllowAnimationLoop(false);
 
             // NORTHNORTHWEST;
-            NORTHNORTHWEST.AnimationToPlay = AnimationID.OVERLOG; // Super far jump forward. 2750
-            NORTHNORTHWEST.bUseLinearTween = false;
-            NORTHNORTHWEST.MovementSpeedMultiplier = 1.6;
-            NORTHNORTHWEST.AnimationSpeed = 2;
-            NORTHNORTHWEST.StartingFrame = 2;
-            NORTHNORTHWEST.bAllowAnimationLoop = false;
+            NORTHNORTHWEST.setAnimationToPlay(AnimationID.OVERLOG); // Super far jump forward. 2750
+            NORTHNORTHWEST.setUseLinearTween(false);
+            NORTHNORTHWEST.setMovementSpeedMultiplier(1.6);
+            NORTHNORTHWEST.setAnimationSpeed(2);
+            NORTHNORTHWEST.setStartingFrame(2);
+            NORTHNORTHWEST.setAllowAnimationLoop(false);
 
             // SOUTHWEST_2;
-            SOUTHWEST_2.AnimationToPlay = AnimationID.MDAUGHTER_ABSAIL_JUMP; // lean WAY back. 1770
-            SOUTHWEST_2.bUseLinearTween = false;
-            SOUTHWEST_2.MovementSpeedMultiplier = 1.5;
-            SOUTHWEST_2.AnimationSpeed = 1;
-            SOUTHWEST_2.StartingFrame = 0;
-            SOUTHWEST_2.bAllowAnimationLoop = false;
+            SOUTHWEST_2.setAnimationToPlay(AnimationID.MDAUGHTER_ABSAIL_JUMP); // lean WAY back. 1770
+            SOUTHWEST_2.setUseLinearTween(false);
+            SOUTHWEST_2.setMovementSpeedMultiplier(1.5);
+            SOUTHWEST_2.setAnimationSpeed(1);
+            SOUTHWEST_2.setStartingFrame(0);
+            SOUTHWEST_2.setAllowAnimationLoop(false);
 
             // SOUTHEASTEAST;
-            SOUTHEASTEAST.AnimationToPlay = AnimationID.EMOTE_STARJUMP_5; // Jumping Jack. 870
-            SOUTHEASTEAST.bUseLinearTween = false;
-            SOUTHEASTEAST.MovementSpeedMultiplier = 2;
-            SOUTHEASTEAST.AnimationSpeed = 1;
-            SOUTHEASTEAST.StartingFrame = 0;
-            SOUTHEASTEAST.bAllowAnimationLoop = false;
+            SOUTHEASTEAST.setAnimationToPlay(AnimationID.EMOTE_STARJUMP_5); // Jumping Jack. 870
+            SOUTHEASTEAST.setUseLinearTween(false);
+            SOUTHEASTEAST.setMovementSpeedMultiplier(2);
+            SOUTHEASTEAST.setAnimationSpeed(1);
+            SOUTHEASTEAST.setStartingFrame(0);
+            SOUTHEASTEAST.setAllowAnimationLoop(false);
 
             // EAST_2
-            EAST_2.AnimationToPlay = AnimationID.EMOTE_DANCE_SPIN; // SIDE_STEP 2 - spin emote. 2107
-            EAST_2.MovementSpeedMultiplier = 2;
-            EAST_2.AnimationSpeed = 1;
-            EAST_2.StartingFrame = 4;
-            EAST_2.bAllowAnimationLoop = false;
+            EAST_2.setAnimationToPlay(AnimationID.EMOTE_DANCE_SPIN); // SIDE_STEP 2 - spin emote. 2107
+            EAST_2.setMovementSpeedMultiplier(2);
+            EAST_2.setAnimationSpeed(1);
+            EAST_2.setStartingFrame(4);
+            EAST_2.setAllowAnimationLoop(false);
 
             // NORTHEASTEAST;
-            NORTHEASTEAST.AnimationToPlay = AnimationID.HUMAN_DHSWORD_SPIN; // another cool spin move. 409
-            NORTHEASTEAST.MovementSpeedMultiplier = 2;
-            NORTHEASTEAST.AnimationSpeed = 1;
-            NORTHEASTEAST.StartingFrame = 0;
-            NORTHEASTEAST.bAllowAnimationLoop = false;
+            NORTHEASTEAST.setAnimationToPlay(AnimationID.HUMAN_DHSWORD_SPIN); // another cool spin move. 409
+            NORTHEASTEAST.setMovementSpeedMultiplier(2);
+            NORTHEASTEAST.setAnimationSpeed(1);
+            NORTHEASTEAST.setStartingFrame(0);
+            NORTHEASTEAST.setAllowAnimationLoop(false);
 
 
             // NORTHWEST_2;
-            NORTHWEST_2.AnimationToPlay = AnimationID.DWARFROCK_CANNON_FLY_GETUP; // huge jump land. 1852
-            NORTHWEST_2.bUseLinearTween = false;
-            NORTHWEST_2.MovementSpeedMultiplier = 1.5;
-            NORTHWEST_2.AnimationSpeed = 1;
-            NORTHWEST_2.StartingFrame = 0;
-            NORTHWEST_2.bAllowAnimationLoop = false;
+            NORTHWEST_2.setAnimationToPlay(AnimationID.DWARFROCK_CANNON_FLY_GETUP); // huge jump land. 1852
+            NORTHWEST_2.setUseLinearTween(false);
+            NORTHWEST_2.setMovementSpeedMultiplier(1.5);
+            NORTHWEST_2.setAnimationSpeed(1);
+            NORTHWEST_2.setStartingFrame(0);
+            NORTHWEST_2.setAllowAnimationLoop(false);
         }
         else if (SpecialAnimationKey.equals("WooxWalk"))
         {
@@ -403,25 +403,25 @@ public class AnimationRequestMoveset
                     // 2 Tiles
                     if (i == 0 || j == 0 || i == 4 || j == 4)
                     {
-                        MovesetArray[i][j].bResetAnimationOnNewTile = true;
-                        MovesetArray[i][j].AnimationToPlay = AnimationID.HUMAN_JUMP_STONES; // 1604
-                        MovesetArray[i][j].bUseLinearTween = false;
-                        MovesetArray[i][j].MovementSpeedMultiplier = 1.5;
-                        MovesetArray[i][j].AnimationSpeed = 1;
-                        MovesetArray[i][j].StartingFrame = 2;
-                        MovesetArray[i][j].EndingFrame = 7;
-                        MovesetArray[i][j].bAllowAnimationLoop = false;
+                        MovesetArray[i][j].setResetAnimationOnNewTile(true);
+                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_JUMP_STONES); // 1604
+                        MovesetArray[i][j].setUseLinearTween(false);
+                        MovesetArray[i][j].setMovementSpeedMultiplier(1.5);
+                        MovesetArray[i][j].setAnimationSpeed(1);
+                        MovesetArray[i][j].setStartingFrame(2);
+                        MovesetArray[i][j].setEndingFrame(7);
+                        MovesetArray[i][j].setAllowAnimationLoop(false);
                     }
                     // 1 Tile
                     else if (i == 1 || j == 1 || i == 3 || j == 3)
                     {
-                        MovesetArray[i][j].AnimationToPlay = AnimationID.HUMAN_SPOT_JUMP; // Little jump. 741
-                        MovesetArray[i][j].MovementSpeedMultiplier = 2.0;
-                        MovesetArray[i][j].bUseLinearTween = false;
-                        MovesetArray[i][j].StartingFrame = 2;
-                        MovesetArray[i][j].AnimationSpeed = 1;
-                        MovesetArray[i][j].EndingFrame = 7;
-                        MovesetArray[i][j].bAllowAnimationLoop = false;
+                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_SPOT_JUMP); // Little jump. 741
+                        MovesetArray[i][j].setMovementSpeedMultiplier(2.0);
+                        MovesetArray[i][j].setUseLinearTween(false);
+                        MovesetArray[i][j].setStartingFrame(2);
+                        MovesetArray[i][j].setAnimationSpeed(1);
+                        MovesetArray[i][j].setEndingFrame(7);
+                        MovesetArray[i][j].setAllowAnimationLoop(false);
                     }
                 }
             }
@@ -438,25 +438,25 @@ public class AnimationRequestMoveset
                     // 2 Tiles
                     if (i == 0 || j == 0 || i == 4 || j == 4)
                     {
-                        MovesetArray[i][j].bResetAnimationOnNewTile = true;
-                        MovesetArray[i][j].AnimationToPlay = AnimationID.HUMAN_JUMP_STONES; // 1604
-                        MovesetArray[i][j].bUseLinearTween = false;
-                        MovesetArray[i][j].MovementSpeedMultiplier = 1.5;
-                        MovesetArray[i][j].AnimationSpeed = 1;
-                        MovesetArray[i][j].StartingFrame = 2;
-                        MovesetArray[i][j].EndingFrame = 7;
-                        MovesetArray[i][j].bAllowAnimationLoop = false;
+                        MovesetArray[i][j].setResetAnimationOnNewTile(true);
+                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_JUMP_STONES); // 1604
+                        MovesetArray[i][j].setUseLinearTween(false);
+                        MovesetArray[i][j].setMovementSpeedMultiplier(1.5);
+                        MovesetArray[i][j].setAnimationSpeed(1);
+                        MovesetArray[i][j].setStartingFrame(2);
+                        MovesetArray[i][j].setEndingFrame(7);
+                        MovesetArray[i][j].setAllowAnimationLoop(false);
                     }
                     // 1 Tile
                     else if (i == 1 || j == 1 || i == 3 || j == 3)
                     {
-                        MovesetArray[i][j].AnimationToPlay = AnimationID.HUMAN_SPOT_JUMP; // Little jump. 741
-                        MovesetArray[i][j].MovementSpeedMultiplier = 2.0;
-                        MovesetArray[i][j].bUseLinearTween = false;
-                        MovesetArray[i][j].StartingFrame = 2;
-                        MovesetArray[i][j].AnimationSpeed = 1;
-                        MovesetArray[i][j].EndingFrame = 7;
-                        MovesetArray[i][j].bAllowAnimationLoop = false;
+                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_SPOT_JUMP); // Little jump. 741
+                        MovesetArray[i][j].setMovementSpeedMultiplier(2.0);
+                        MovesetArray[i][j].setUseLinearTween(false);
+                        MovesetArray[i][j].setStartingFrame(2);
+                        MovesetArray[i][j].setAnimationSpeed(1);
+                        MovesetArray[i][j].setEndingFrame(7);
+                        MovesetArray[i][j].setAllowAnimationLoop(false);
                     }
                 }
             }
@@ -477,34 +477,34 @@ public class AnimationRequestMoveset
         }
         Initialize();
 
-        SOUTHEAST_2.PoseAnimationToPlay = AnimSet.WalkRotate180; SOUTHEAST_2.AnimationSpeed = 2; // Backwards 2, side step 2
-        SOUTHWESTWEST.PoseAnimationToPlay = AnimSet.WalkRotateRight; // South, side step 2
-        WEST_2.PoseAnimationToPlay = AnimSet.WalkRotateLeft; // Side step 2
-        NORTHWESTWEST.PoseAnimationToPlay = AnimSet.WalkRotateLeft; // North, Side step 2
-        NORTHEAST_2.PoseAnimationToPlay = AnimSet.RunAnimation; // North-west 2
+        SOUTHEAST_2.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHEAST_2.setAnimationSpeed(2); // Backwards 2, side step 2
+        SOUTHWESTWEST.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // South, side step 2
+        WEST_2.setPoseAnimationToPlay(AnimSet.WalkRotateLeft); // Side step 2
+        NORTHWESTWEST.setPoseAnimationToPlay(AnimSet.WalkRotateLeft); // North, Side step 2
+        NORTHEAST_2.setPoseAnimationToPlay(AnimSet.RunAnimation); // North-west 2
 
-        SOUTHSOUTHEAST.PoseAnimationToPlay = AnimSet.WalkRotate180; SOUTHSOUTHEAST.AnimationSpeed = 2; // Backwards 2, side step 1
-        SOUTHWEST_1.PoseAnimationToPlay = AnimSet.WalkRotate180; // South-west
-        WEST_1.PoseAnimationToPlay = AnimSet.WalkRotateLeft; // Side step 1
-        NORTHWEST_1.PoseAnimationToPlay = AnimSet.WalkAnimation; // North-west
-        NORTHNORTHEAST.PoseAnimationToPlay = AnimSet.RunAnimation; // West, forward 2
+        SOUTHSOUTHEAST.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHSOUTHEAST.setAnimationSpeed(2); // Backwards 2, side step 1
+        SOUTHWEST_1.setPoseAnimationToPlay(AnimSet.WalkRotate180); // South-west
+        WEST_1.setPoseAnimationToPlay(AnimSet.WalkRotateLeft); // Side step 1
+        NORTHWEST_1.setPoseAnimationToPlay(AnimSet.WalkAnimation); // North-west
+        NORTHNORTHEAST.setPoseAnimationToPlay(AnimSet.RunAnimation); // West, forward 2
 
-        BACK_2.PoseAnimationToPlay = AnimSet.WalkRotate180; BACK_2.AnimationSpeed = 2; // Backwards 2
-        BACK_1.PoseAnimationToPlay = AnimSet.WalkRotate180; // Backwards
-        CENTER.PoseAnimationToPlay = AnimSet.IdleRotateRight; // Center
-        FORWARD_1.PoseAnimationToPlay = AnimSet.WalkAnimation; // Forward
-        FORWARD_2.PoseAnimationToPlay = AnimSet.RunAnimation; // 2 Forward
+        BACK_2.setPoseAnimationToPlay(AnimSet.WalkRotate180); BACK_2.setAnimationSpeed(2); // Backwards 2
+        BACK_1.setPoseAnimationToPlay(AnimSet.WalkRotate180); // Backwards
+        CENTER.setPoseAnimationToPlay(AnimSet.IdleRotateRight); // Center
+        FORWARD_1.setPoseAnimationToPlay(AnimSet.WalkAnimation); // Forward
+        FORWARD_2.setPoseAnimationToPlay(AnimSet.RunAnimation); // 2 Forward
 
-        SOUTHSOUTHWEST.PoseAnimationToPlay = AnimSet.WalkRotate180; SOUTHSOUTHWEST.AnimationSpeed = 2; // Backwards 2, side step 1
-        SOUTHEAST_1.PoseAnimationToPlay = AnimSet.WalkRotate180; // South-east
-        EAST_1.PoseAnimationToPlay = AnimSet.WalkRotateRight; // Side step 1
-        NORTHEAST_1.PoseAnimationToPlay = AnimSet.WalkAnimation; // North-east
-        NORTHNORTHWEST.PoseAnimationToPlay = AnimSet.RunAnimation; // East, forward 2
+        SOUTHSOUTHWEST.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHSOUTHWEST.setAnimationSpeed(2); // Backwards 2, side step 1
+        SOUTHEAST_1.setPoseAnimationToPlay(AnimSet.WalkRotate180); // South-east
+        EAST_1.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // Side step 1
+        NORTHEAST_1.setPoseAnimationToPlay(AnimSet.WalkAnimation); // North-east
+        NORTHNORTHWEST.setPoseAnimationToPlay(AnimSet.RunAnimation); // East, forward 2
 
-        SOUTHWEST_2.PoseAnimationToPlay = AnimSet.WalkRotate180; SOUTHWEST_2.AnimationSpeed = 2; // Backwards 2, side step 2
-        SOUTHEASTEAST.PoseAnimationToPlay = AnimSet.WalkRotateRight; // South, side step 2
-        EAST_2.PoseAnimationToPlay = AnimSet.WalkRotateRight; // Side step 2
-        NORTHEASTEAST.PoseAnimationToPlay = AnimSet.WalkRotateRight; // North, Side step 2
-        NORTHWEST_2.PoseAnimationToPlay = AnimSet.RunAnimation; // North-east 2
+        SOUTHWEST_2.setPoseAnimationToPlay(AnimSet.WalkRotate180); SOUTHWEST_2.setAnimationSpeed(2); // Backwards 2, side step 2
+        SOUTHEASTEAST.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // South, side step 2
+        EAST_2.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // Side step 2
+        NORTHEASTEAST.setPoseAnimationToPlay(AnimSet.WalkRotateRight); // North, Side step 2
+        NORTHWEST_2.setPoseAnimationToPlay(AnimSet.RunAnimation); // North-east 2
     }
 }
