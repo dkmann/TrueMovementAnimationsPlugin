@@ -1,42 +1,44 @@
 package com.truetileanimationmovement;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
+@Data
+@NoArgsConstructor
 public class AnimationRequestDetails
 {
-    private double MovementSpeedMultiplier = 1;
-    private int AnimationToPlay = -1;
-    private int PoseAnimationToPlay = -1;
-    private int StartingFrame = 0;
-    private int EndingFrame = 5000;
-    private int AnimationSpeed = 1;
-    private int OrientationSpeed = 30;
-    private boolean ResetAnimationOnNewTile = false;
-    private boolean UseLinearTween = false;
-    private boolean ShouldTeleportToLocation = false;
-    private boolean AtDestinationLocation = false;
-    private boolean AllowAnimationLoop = true;
+    private double movementSpeedMultiplier = 1;
+    private int animationToPlay = -1;
+    private int poseAnimationToPlay = -1;
+    private int startingFrame = 0;
+    private int endingFrame = 5000;
+    private int animationSpeed = 1;
+    private int orientationSpeed = 30;
+    private boolean resetAnimationOnNewTile = false;
+    private boolean useLinearTween = false;
+    private boolean shouldTeleportToLocation = false;
+    private boolean atDestinationLocation = false;
+    private boolean allowAnimationLoop = true;
 
-    static AnimationRequestDetails NewObject(AnimationRequestDetails InDetails)
+    private AnimationRequestDetails(final AnimationRequestDetails inDetails)
     {
-        AnimationRequestDetails newObject = new AnimationRequestDetails();
+        movementSpeedMultiplier = inDetails.movementSpeedMultiplier;
+        animationToPlay = inDetails.animationToPlay;
+        poseAnimationToPlay = inDetails.poseAnimationToPlay;
+        startingFrame = inDetails.startingFrame;
+        endingFrame = inDetails.endingFrame;
+        animationSpeed = inDetails.animationSpeed;
+        orientationSpeed = inDetails.orientationSpeed;
+        resetAnimationOnNewTile = inDetails.resetAnimationOnNewTile;
+        useLinearTween = inDetails.useLinearTween;
+        shouldTeleportToLocation = inDetails.shouldTeleportToLocation;
+        atDestinationLocation = inDetails.atDestinationLocation;
+        allowAnimationLoop = inDetails.allowAnimationLoop;
+    }
 
-        newObject.MovementSpeedMultiplier = InDetails.MovementSpeedMultiplier;
-        newObject.AnimationToPlay = InDetails.AnimationToPlay;
-        newObject.PoseAnimationToPlay = InDetails.PoseAnimationToPlay;
-        newObject.StartingFrame = InDetails.StartingFrame;
-        newObject.EndingFrame = InDetails.EndingFrame;
-        newObject.AnimationSpeed = InDetails.AnimationSpeed;
-        newObject.OrientationSpeed = InDetails.OrientationSpeed;
-        newObject.ResetAnimationOnNewTile = InDetails.ResetAnimationOnNewTile;
-        newObject.UseLinearTween = InDetails.UseLinearTween;
-        newObject.ShouldTeleportToLocation = InDetails.ShouldTeleportToLocation;
-        newObject.AtDestinationLocation = InDetails.AtDestinationLocation;
-        newObject.AllowAnimationLoop = InDetails.AllowAnimationLoop;
-
-        return newObject;
+    public static AnimationRequestDetails copyOf(
+            final AnimationRequestDetails inDetails)
+    {
+        return new AnimationRequestDetails(inDetails);
     }
 }
