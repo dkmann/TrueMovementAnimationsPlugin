@@ -832,7 +832,7 @@ public class CustomMovementHandler
                         // Handle normal walking
                         CurrentAnimationRequest = AnimationRequestMovesetCache
                                 .getMovesetFromAnimationSet(OldAnimationSet, config)
-                                .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                                .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                                 .copy();
                         CurrentAnimationRequest.setShouldTeleportToLocation(false);
                     }
@@ -869,7 +869,7 @@ public class CustomMovementHandler
 
                         CurrentAnimationRequest = AnimationRequestMovesetCache
                                 .getMovesetFromAnimationSet(OldAnimationSet, config)
-                                .MovesetArray[2 + TempRotatedDirectionX][2 + TempRotatedDirectionY]
+                                .lookupAnimationRequest(2 + TempRotatedDirectionX, 2 + TempRotatedDirectionY)
                                 .copy();
                     }
                     bShouldUseTrueLocationOrientation = true;
@@ -887,7 +887,7 @@ public class CustomMovementHandler
                 // Handle woox walking
                 CurrentAnimationRequest = AnimationRequestMovesetCache
                         .getMovesetFromUniqueKey(OldAnimationSet, "WooxWalk", config)
-                        .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                        .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                         .copy();
 
                 // No turning if no target
@@ -906,7 +906,7 @@ public class CustomMovementHandler
                 // Handle tick perfect moving
                 CurrentAnimationRequest = AnimationRequestMovesetCache
                         .getMovesetFromUniqueKey(OldAnimationSet, "TickPerfectMovement", config)
-                        .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                        .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                         .copy();
             }
             else
@@ -917,7 +917,7 @@ public class CustomMovementHandler
                     // Handle normal walking
                     CurrentAnimationRequest = AnimationRequestMovesetCache
                             .getMovesetFromUniqueKey(OldAnimationSet, "SpecialMoves", config)
-                            .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                            .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                             .copy();
                 }
                 else
@@ -925,7 +925,7 @@ public class CustomMovementHandler
                     // Handle normal walking
                     CurrentAnimationRequest = AnimationRequestMovesetCache
                             .getMovesetFromAnimationSet(OldAnimationSet, config)
-                            .MovesetArray[2 + RotatedDirectionX][2 + RotatedDirectionY]
+                            .lookupAnimationRequest(2 + RotatedDirectionX, 2 + RotatedDirectionY)
                             .copy();
                 }
             }

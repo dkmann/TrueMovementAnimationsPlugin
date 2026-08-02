@@ -59,34 +59,41 @@ public class AnimationRequestMoveset
 // 9799->moons of peril, hit back
 // REMEMBER YOU CAN ALSO PLAY THESE BACKWARDS
 
-    // 2D grid array
-    // (NOTE: THESE ARE ALWAYS BASED ON PLAYER'S ORIENTATION!)
-    //    +-------+-------+-------+-------+-------+
-    //    | 2NW   | 2NNW  | 2N    | 2NNE  | 2NE   |
-    //    +-------+-------+-------+-------+-------+
-    //    | 2WWN  | NW    | N     | NE    | 2EEN  |
-    //    +-------+-------+-------+-------+-------+
-    //    | 2W    | W     | X     | E     | 2E    |
-    //    +-------+-------+-------+-------+-------+
-    //    | 2WWS  | SW    | S     | SE    | 2EES  |
-    //    +-------+-------+-------+-------+-------+
-    //    | 2SW   | 2SSW  | 2S    | 2SSE  | 2SE   |
-    //    +-------+-------+-------+-------+-------+
-    //
-    //    +-------+-------+-------+-------+-------+
-    //    | 0,4   | 1,4   | 2,4   | 3,4   | 4,4   |
-    //    +-------+-------+-------+-------+-------+
-    //    | 0,3   | 1,3   | 2,3   | 3,3   | 4,3   |
-    //    +-------+-------+-------+-------+-------+
-    //    | 0,2   | 1,2   | 2,2 X | 3,2   | 4,2   |
-    //    +-------+-------+-------+-------+-------+
-    //    | 0,1   | 1,1   | 2,1   | 3,1   | 4,1   |
-    //    +-------+-------+-------+-------+-------+
-    //    | 0,0   | 1,0   | 2,0   | 3,0   | 4,0   |
-    //    +-------+-------+-------+-------+-------+
-    //
-
-    public AnimationRequestDetails[][] MovesetArray = new AnimationRequestDetails[5][5]; // 5 by 5 grid around player
+    /**
+     * 2D grid array: 5 by 5 grid around player.
+     * <p>
+     * NOTE: THESE ARE ALWAYS BASED ON PLAYER'S ORIENTATION!
+     *
+     * <pre>
+     * +-------+-------+-------+-------+-------+
+     * | 2NW   | 2NNW  | 2N    | 2NNE  | 2NE   |
+     * +-------+-------+-------+-------+-------+
+     * | 2WWN  | NW    | N     | NE    | 2EEN  |
+     * +-------+-------+-------+-------+-------+
+     * | 2W    | W     | X     | E     | 2E    |
+     * +-------+-------+-------+-------+-------+
+     * | 2WWS  | SW    | S     | SE    | 2EES  |
+     * +-------+-------+-------+-------+-------+
+     * | 2SW   | 2SSW  | 2S    | 2SSE  | 2SE   |
+     * +-------+-------+-------+-------+-------+
+     * </pre>
+     *
+     * <pre>
+     * +-------+-------+-------+-------+-------+
+     * | 0,4   | 1,4   | 2,4   | 3,4   | 4,4   |
+     * +-------+-------+-------+-------+-------+
+     * | 0,3   | 1,3   | 2,3   | 3,3   | 4,3   |
+     * +-------+-------+-------+-------+-------+
+     * | 0,2   | 1,2   | 2,2 X | 3,2   | 4,2   |
+     * +-------+-------+-------+-------+-------+
+     * | 0,1   | 1,1   | 2,1   | 3,1   | 4,1   |
+     * +-------+-------+-------+-------+-------+
+     * | 0,0   | 1,0   | 2,0   | 3,0   | 4,0   |
+     * +-------+-------+-------+-------+-------+
+     * </pre>
+     */
+    private final AnimationRequestDetails[][] movesetArray =
+            new AnimationRequestDetails[5][5];
 
     public AnimationRequestDetails EAST_2;
     public AnimationRequestDetails EAST_1;
@@ -121,36 +128,36 @@ public class AnimationRequestMoveset
 
     public void Initialize()
     {
-        EAST_2 = MovesetArray[4][2];
-        EAST_1 = MovesetArray[3][2];
-        CENTER = MovesetArray[2][2];
-        WEST_1 = MovesetArray[1][2];
-        WEST_2 = MovesetArray[0][2];
+        EAST_2 = movesetArray[4][2];
+        EAST_1 = movesetArray[3][2];
+        CENTER = movesetArray[2][2];
+        WEST_1 = movesetArray[1][2];
+        WEST_2 = movesetArray[0][2];
 
-        NORTHEAST_1 = MovesetArray[3][3];
-        NORTHWEST_1 = MovesetArray[1][3];
-        NORTHEAST_2 = MovesetArray[0][4];
-        NORTHWEST_2 = MovesetArray[4][4];
+        NORTHEAST_1 = movesetArray[3][3];
+        NORTHWEST_1 = movesetArray[1][3];
+        NORTHEAST_2 = movesetArray[0][4];
+        NORTHWEST_2 = movesetArray[4][4];
 
-        SOUTHEAST_1 = MovesetArray[3][1];
-        SOUTHWEST_1 = MovesetArray[1][1];
-        SOUTHEAST_2 = MovesetArray[0][0];
-        SOUTHWEST_2 = MovesetArray[4][0];
+        SOUTHEAST_1 = movesetArray[3][1];
+        SOUTHWEST_1 = movesetArray[1][1];
+        SOUTHEAST_2 = movesetArray[0][0];
+        SOUTHWEST_2 = movesetArray[4][0];
 
-        FORWARD_1 = MovesetArray[2][3];
-        FORWARD_2 = MovesetArray[2][4];
-        BACK_1 = MovesetArray[2][1];
-        BACK_2 = MovesetArray[2][0];
+        FORWARD_1 = movesetArray[2][3];
+        FORWARD_2 = movesetArray[2][4];
+        BACK_1 = movesetArray[2][1];
+        BACK_2 = movesetArray[2][0];
 
-        NORTHEASTEAST = MovesetArray[4][3];
-        NORTHWESTWEST = MovesetArray[0][3];
-        NORTHNORTHEAST = MovesetArray[1][4];
-        NORTHNORTHWEST = MovesetArray[3][4];
+        NORTHEASTEAST = movesetArray[4][3];
+        NORTHWESTWEST = movesetArray[0][3];
+        NORTHNORTHEAST = movesetArray[1][4];
+        NORTHNORTHWEST = movesetArray[3][4];
 
-        SOUTHEASTEAST = MovesetArray[4][1];
-        SOUTHWESTWEST = MovesetArray[0][1];
-        SOUTHSOUTHEAST = MovesetArray[1][0];
-        SOUTHSOUTHWEST = MovesetArray[3][0];
+        SOUTHEASTEAST = movesetArray[4][1];
+        SOUTHWESTWEST = movesetArray[0][1];
+        SOUTHSOUTHEAST = movesetArray[1][0];
+        SOUTHSOUTHWEST = movesetArray[3][0];
 
     }
     static public AnimationRequestDetails GetDefaultSpecialMoveAnimationRequest()
@@ -192,7 +199,7 @@ public class AnimationRequestMoveset
         if (SpecialAnimationKey.equals("SpecialMoves")) {
             for (int i = 0; i < 5; ++i) {
                 for (int j = 0; j < 5; ++j) {
-                    MovesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
+                    movesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
                 }
             }
             Initialize();
@@ -395,30 +402,30 @@ public class AnimationRequestMoveset
             {
                 for (int j = 0; j < 5; ++j)
                 {
-                    MovesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
+                    movesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
 
                     // 2 Tiles
                     if (i == 0 || j == 0 || i == 4 || j == 4)
                     {
-                        MovesetArray[i][j].setResetAnimationOnNewTile(true);
-                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_JUMP_STONES); // 1604
-                        MovesetArray[i][j].setUseLinearTween(false);
-                        MovesetArray[i][j].setMovementSpeedMultiplier(1.5);
-                        MovesetArray[i][j].setAnimationSpeed(1);
-                        MovesetArray[i][j].setStartingFrame(2);
-                        MovesetArray[i][j].setEndingFrame(7);
-                        MovesetArray[i][j].setAllowAnimationLoop(false);
+                        movesetArray[i][j].setResetAnimationOnNewTile(true);
+                        movesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_JUMP_STONES); // 1604
+                        movesetArray[i][j].setUseLinearTween(false);
+                        movesetArray[i][j].setMovementSpeedMultiplier(1.5);
+                        movesetArray[i][j].setAnimationSpeed(1);
+                        movesetArray[i][j].setStartingFrame(2);
+                        movesetArray[i][j].setEndingFrame(7);
+                        movesetArray[i][j].setAllowAnimationLoop(false);
                     }
                     // 1 Tile
                     else if (i == 1 || j == 1 || i == 3 || j == 3)
                     {
-                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_SPOT_JUMP); // Little jump. 741
-                        MovesetArray[i][j].setMovementSpeedMultiplier(2.0);
-                        MovesetArray[i][j].setUseLinearTween(false);
-                        MovesetArray[i][j].setStartingFrame(2);
-                        MovesetArray[i][j].setAnimationSpeed(1);
-                        MovesetArray[i][j].setEndingFrame(7);
-                        MovesetArray[i][j].setAllowAnimationLoop(false);
+                        movesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_SPOT_JUMP); // Little jump. 741
+                        movesetArray[i][j].setMovementSpeedMultiplier(2.0);
+                        movesetArray[i][j].setUseLinearTween(false);
+                        movesetArray[i][j].setStartingFrame(2);
+                        movesetArray[i][j].setAnimationSpeed(1);
+                        movesetArray[i][j].setEndingFrame(7);
+                        movesetArray[i][j].setAllowAnimationLoop(false);
                     }
                 }
             }
@@ -430,30 +437,30 @@ public class AnimationRequestMoveset
             {
                 for (int j = 0; j < 5; ++j)
                 {
-                    MovesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
+                    movesetArray[i][j] = GetDefaultSpecialMoveAnimationRequest();
 
                     // 2 Tiles
                     if (i == 0 || j == 0 || i == 4 || j == 4)
                     {
-                        MovesetArray[i][j].setResetAnimationOnNewTile(true);
-                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_JUMP_STONES); // 1604
-                        MovesetArray[i][j].setUseLinearTween(false);
-                        MovesetArray[i][j].setMovementSpeedMultiplier(1.5);
-                        MovesetArray[i][j].setAnimationSpeed(1);
-                        MovesetArray[i][j].setStartingFrame(2);
-                        MovesetArray[i][j].setEndingFrame(7);
-                        MovesetArray[i][j].setAllowAnimationLoop(false);
+                        movesetArray[i][j].setResetAnimationOnNewTile(true);
+                        movesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_JUMP_STONES); // 1604
+                        movesetArray[i][j].setUseLinearTween(false);
+                        movesetArray[i][j].setMovementSpeedMultiplier(1.5);
+                        movesetArray[i][j].setAnimationSpeed(1);
+                        movesetArray[i][j].setStartingFrame(2);
+                        movesetArray[i][j].setEndingFrame(7);
+                        movesetArray[i][j].setAllowAnimationLoop(false);
                     }
                     // 1 Tile
                     else if (i == 1 || j == 1 || i == 3 || j == 3)
                     {
-                        MovesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_SPOT_JUMP); // Little jump. 741
-                        MovesetArray[i][j].setMovementSpeedMultiplier(2.0);
-                        MovesetArray[i][j].setUseLinearTween(false);
-                        MovesetArray[i][j].setStartingFrame(2);
-                        MovesetArray[i][j].setAnimationSpeed(1);
-                        MovesetArray[i][j].setEndingFrame(7);
-                        MovesetArray[i][j].setAllowAnimationLoop(false);
+                        movesetArray[i][j].setAnimationToPlay(AnimationID.HUMAN_SPOT_JUMP); // Little jump. 741
+                        movesetArray[i][j].setMovementSpeedMultiplier(2.0);
+                        movesetArray[i][j].setUseLinearTween(false);
+                        movesetArray[i][j].setStartingFrame(2);
+                        movesetArray[i][j].setAnimationSpeed(1);
+                        movesetArray[i][j].setEndingFrame(7);
+                        movesetArray[i][j].setAllowAnimationLoop(false);
                     }
                 }
             }
@@ -469,7 +476,7 @@ public class AnimationRequestMoveset
         {
             for (int j = 0; j < 5; ++j)
             {
-                MovesetArray[i][j] = GetDefaultIdleMoveAnimationRequest(config);
+                movesetArray[i][j] = GetDefaultIdleMoveAnimationRequest(config);
             }
         }
         Initialize();
@@ -503,5 +510,11 @@ public class AnimationRequestMoveset
         EAST_2.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // Side step 2
         NORTHEASTEAST.setPoseAnimationToPlay(AnimSet.getWalkRotateRight()); // North, Side step 2
         NORTHWEST_2.setPoseAnimationToPlay(AnimSet.getRunAnimation()); // North-east 2
+    }
+
+    public AnimationRequestDetails lookupAnimationRequest(
+            final int x, final int y)
+    {
+        return movesetArray[x][y];
     }
 }
